@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { menuLinks } from '../data/Links'
 import {
     NavContainer,

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 import Button from './Button'
 import { icons } from '../data/IconsFooter';
@@ -35,6 +35,7 @@ const IconsContainer = styled.div`
 `;
 const Icon = styled.img`
     margin:0 .5rem 2rem;
+    cursor:pointer;
     transform:scale(1.2);
 @media(min-width:${desktop}px){
     margin:2rem 0 0 1rem;
@@ -84,6 +85,10 @@ const Links = styled.a`
     font-size:0.8rem;
     color:hsl(220, 16%, 96%);
     margin-bottom:1.2rem;
+&:hover{
+    color:hsl(136, 65%, 51%)
+}
+
 @media(min-width:${desktop}px){
     font-size:1rem;
 }
@@ -102,13 +107,26 @@ const Reserved = styled.p`
 
 
 const Footers = (props) => {
+    const [isShown, setIsShown] = useState(false)
+
+    const clg = () =>{
+        console.log(isShown)
+    } 
+useEffect(() => {
+    clg()
+}, [isShown])
     return (
         <Footer onClick={props.toogleIcon? props.toogleNavIcon : null}>
             <LogoFooter>
                 <Logo color='#fff'></Logo>
                 <IconsContainer>
                     {icons.map((items, index) => (
-                        <Icon key={index} src={items} />
+                        <Icon 
+                            key={index} 
+                            src={items}
+                            // onMouseEnter={() => setIsShown(true)}
+                            // onMouseLeave={() => setIsShown(false)}
+                        />
                     ))}
                 </IconsContainer>
             </LogoFooter>

@@ -8,7 +8,8 @@ import {
     NavMenuLinks,
     Links,
     ContainerBtn,
-    NavLogo
+    NavLogo,
+    ContainerLinks
 } from '../styled/Navbarstyle'
 import Button from '../components/Button'
 import Logo from './Logo'
@@ -30,7 +31,9 @@ const Navbar = (props) => {
             </NavIconToogle>
             <NavMenuLinks>
                     {menuLinks.map((items,index) => (
-                        <Links key={index} href={items.route}>{items.tittle}</Links>
+                        <ContainerLinks key={index}>
+                            <Links href={items.route}>{items.tittle}</Links>
+                        </ContainerLinks>
                     ))}
             </NavMenuLinks>
             <ContainerBtn>

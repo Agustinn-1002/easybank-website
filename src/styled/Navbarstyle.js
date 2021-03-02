@@ -37,25 +37,32 @@ margin-right:1.2rem;
 export const HamburgerIcon = styled.img.attrs({src:Hamburger})``;
 export const CloseIcon = styled.img.attrs({src:closeNav})``;
 
-export const NavMenuLinks = styled.div`
+export const NavMenuLinks = styled.ul`
     display:none;
 @media(min-width:${desktop}px){       
     display:flex;
 }
 `;
+export const ContainerLinks = styled.li`
+    list-style:none;
+
+`;
+
 export const Links = styled.a`
+    padding:21px 0;
+    height:100%; 
     margin:0 1rem;
     font-size:0.7rem;
     text-decoration:none;
     color:hsl(233, 8%, 62%);
-/* &:after{
-    content:'';
-    position:absolute;
-    width:100%;
-    height:2px;
-    background: linear-gradient(90deg, rgba(49,211,92,1), rgba(43,183,218,1));
+    transition:all .3s;
+    border-bottom: 4px solid transparent;
+&:hover{
+    border-image: linear-gradient(90deg, rgba(49,211,92,1), rgba(43,183,218,1)) 1;
+    color:#000;
 
-} */
+}
+
 `;
 
 export const ContainerBtn = styled.div`

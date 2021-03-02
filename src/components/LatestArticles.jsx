@@ -52,6 +52,10 @@ const InfoCard = styled.div`
         font-size:.9rem;
         margin:3px 0 0;
         line-height:1.2rem;
+        cursor:pointer;
+    &:hover{
+        color:hsl(136, 65%, 51%);
+    }
     }
     p{
         font-size:.7rem;

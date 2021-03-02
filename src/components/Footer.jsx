@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import Button from './Button'
 import { icons } from '../data/IconsFooter';
@@ -107,14 +107,6 @@ const Reserved = styled.p`
 
 
 const Footers = (props) => {
-    const [isShown, setIsShown] = useState(false)
-
-    const clg = () =>{
-        console.log(isShown)
-    } 
-useEffect(() => {
-    clg()
-}, [isShown])
     return (
         <Footer onClick={props.toogleIcon? props.toogleNavIcon : null}>
             <LogoFooter>
@@ -124,8 +116,6 @@ useEffect(() => {
                         <Icon 
                             key={index} 
                             src={items}
-                            // onMouseEnter={() => setIsShown(true)}
-                            // onMouseLeave={() => setIsShown(false)}
                         />
                     ))}
                 </IconsContainer>
